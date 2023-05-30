@@ -1,0 +1,25 @@
+@startuml
+
+!theme C4_veridas from https://raw.githubusercontent.com/veri-das/c4-veridas-theme/master
+
+!include <C4/C4_context.puml>
+
+hide stereotype
+
+title Example of context diagram
+
+Person_Ext(user, "user", "The person using our software")
+Person(staff, "staff", "Employees of our company")
+
+Boundary(own_context, "own context", "Our pieces live here") {
+    System(own_system, "Own system", "We build this")
+}
+Boundary(ext_context, "external context", "We do not control this") {
+    System_Ext(ext_system, "External system", "Third party built this")
+}
+
+Rel(staff, own_system, "operates")
+Rel(user, own_system, "uses")
+Rel(own_system, ext_system, "uses", "This is the relation between the systems")
+
+@enduml
