@@ -8,14 +8,14 @@ hide stereotype
 
 title Example of context diagram
 
-Person_Ext(user, "user", "The person using our software")
+Person_Ext(user, "customer", "The person using our software")
 Person(staff, "staff", "Employees of our company")
 
 Boundary(own_context, "own context", "Our pieces live here") {
-    System(own_system, "Own system", "We build this")
+    System(own_system, "own system", "We build this")
 }
 Boundary(ext_context, "external context", "We do not control this") {
-    System_Ext(ext_system, "External system", "Third party built this")
+    System_Ext(ext_system, "external system", "Third party built this")
 }
 
 Rel(staff, own_system, "operates")

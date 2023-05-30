@@ -1,0 +1,30 @@
+@startuml
+
+!theme C4_veridas from https://raw.githubusercontent.com/veri-das/c4-veridas-theme/master
+
+!include <C4/C4_container.puml>
+
+hide stereotype
+
+title Example of container diagram
+
+Person_Ext(user, "customer", "The person using our software")
+Person(staff, "staff", "Employees of our company")
+
+Boundary(own_system, "own system", "We build this") {
+    port http1 as "http"
+    port ops
+    Container(service, "service", "http")
+    ContainerDb(db, "Database", "Posgresql")
+}
+
+Boundary(ext_system, "external system", "Third party built this") {
+    Container_Ext(extservice, "service", "http")
+}
+
+Rel(staff, ops, "operates")
+Rel(service, db, "uses")
+Rel(user, http1, "uses")
+Rel(service, extservice, "calls")
+
+@enduml
