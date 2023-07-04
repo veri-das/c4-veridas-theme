@@ -41,3 +41,42 @@
 !$COMPONENT_BORDER_COLOR ?= $VERIDAS_CORAL_LIGHT
 !$EXTERNAL_COMPONENT_FONT_COLOR ?= $ELEMENT_FONT_COLOR
 !$EXTERNAL_COMPONENT_BG_COLOR ?= $EXTERNAL_CONTAINER_BG_COLOR
+
+' "C4 styled" default is that lifeline is arrow color
+!$SEQUENCE_BG_COLOR ?= $VERIDAS_BLUE_DARK
+!$ARROW_COLOR ?= $VERIDAS_CORAL_DARK
+!$BOUNDARY_COLOR ?= $VERIDAS_NEUTRAL_DARK
+
+skinparam SequenceLifelineBorderColor $ARROW_COLOR
+
+skinparam SequenceGroupBodyBackgroundColor $SEQUENCE_BG_COLOR
+skinparam SequenceGroupFontColor $BOUNDARY_COLOR
+skinparam SequenceGroupBackgroundColor $BOUNDARY_COLOR
+skinparam SequenceGroupHeaderFontColor $SEQUENCE_BG_COLOR
+skinparam SequenceGroupBorderColor $BOUNDARY_COLOR
+
+skinparam SequenceReferenceBackgroundColor $SEQUENCE_BG_COLOR
+skinparam SequenceReferenceFontColor $BOUNDARY_COLOR
+skinparam SequenceReferenceHeaderBackgroundColor $BOUNDARY_COLOR
+' VIA STYLE
+' skinparam SequenceReferenceHeaderFontColor $SEQUENCE_BG_COLOR
+<style>
+referenceHeader {
+  fontcolor $SEQUENCE_BG_COLOR
+}
+</style>
+skinparam SequenceReferenceBorderColor $BOUNDARY_COLOR
+
+skinparam SequenceDividerBackgroundColor $SEQUENCE_BG_COLOR
+skinparam SequenceDividerFontColor $BOUNDARY_COLOR
+skinparam SequenceDividerBorderColor $BOUNDARY_COLOR
+
+' VIA STYLE
+' skinparam SequenceDelayFontColor green
+<style>
+sequenceDiagram {
+  delay {
+    FontColor $BOUNDARY_COLOR
+  }
+}
+</style>
