@@ -42,3 +42,54 @@
 !$COMPONENT_BORDER_COLOR ?= $VERIDAS_CORAL_LIGHT
 !$EXTERNAL_COMPONENT_FONT_COLOR ?= $ELEMENT_FONT_COLOR
 !$EXTERNAL_COMPONENT_BG_COLOR ?= $EXTERNAL_CONTAINER_BG_COLOR
+
+' Sequence diagrams
+
+!$SEQUENCE_BG_COLOR ?= $VERIDAS_BLUE_DARK
+!$ARROW_COLOR ?= $VERIDAS_NEUTRAL_MEDIUM
+!$BOUNDARY_COLOR ?= $VERIDAS_NEUTRAL_DARK
+!$PARTICIPANT_BG_COLOR ?= $VERIDAS_WHITE
+
+' "C4 styled" default is no foot boxes
+hide footbox
+' "C4 styled" default is that lifeline is arrow color
+skinparam SequenceLifelineBorderColor $ARROW_COLOR
+
+skinparam SequenceGroupBodyBackgroundColor $SEQUENCE_BG_COLOR
+skinparam SequenceGroupFontColor $BOUNDARY_COLOR
+skinparam SequenceGroupBackgroundColor $BOUNDARY_COLOR
+skinparam SequenceGroupHeaderFontColor $SEQUENCE_BG_COLOR
+skinparam SequenceGroupBorderColor $BOUNDARY_COLOR
+
+skinparam SequenceReferenceBackgroundColor $SEQUENCE_BG_COLOR
+skinparam SequenceReferenceFontColor $BOUNDARY_COLOR
+skinparam SequenceReferenceHeaderBackgroundColor $BOUNDARY_COLOR
+
+' VIA STYLE
+' skinparam SequenceReferenceHeaderFontColor $SEQUENCE_BG_COLOR
+<style>
+referenceHeader {
+  fontcolor $SEQUENCE_BG_COLOR
+}
+</style>
+skinparam SequenceReferenceBorderColor $BOUNDARY_COLOR
+
+skinparam SequenceDividerBackgroundColor $SEQUENCE_BG_COLOR
+skinparam SequenceDividerFontColor $BOUNDARY_COLOR
+skinparam SequenceDividerBorderColor $BOUNDARY_COLOR
+
+skinparam ActorBorderColor $BOUNDARY_COLOR
+skinparam ActorBackgroundColor $PARTICIPANT_BG_COLOR
+skinparam ParticipantBorderColor $BOUNDARY_COLOR
+skinparam ParticipantBackgroundColor $PARTICIPANT_BG_COLOR
+
+' VIA STYLE
+' skinparam SequenceDelayFontColor green
+<style>
+sequenceDiagram {
+  delay {
+    FontColor $BOUNDARY_COLOR
+  }
+}
+</style>
+
